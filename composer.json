@@ -1,0 +1,45 @@
+{
+  "name": "brew-bytes/acorn-disable-comments",
+  "type": "package",
+  "description": "An Acorn package to fully disable WordPress comments site-wide.",
+  "keywords": [
+    "wordpress",
+    "sage",
+    "acorn",
+    "roots",
+    "comments"
+  ],
+  "homepage": "https://github.com/Brew-Bytes/acorn-disable-comments",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Scott Hartley",
+      "homepage": "https://github.com/Brew-Bytes"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Brew-Bytes/acorn-disable-comments/issues",
+    "source": "https://github.com/Brew-Bytes/acorn-disable-comments"
+  },
+  "autoload": {
+    "psr-4": {
+      "BrewAndBytes\\AcornDisableComments\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13",
+    "phpstan/phpstan": "^1.11",
+    "roots/acorn": "^4.0|^5.0"
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "BrewAndBytes\\AcornDisableComments\\DisableCommentsServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable"
+}

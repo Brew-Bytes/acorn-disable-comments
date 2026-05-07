@@ -1,0 +1,10 @@
+parameters:
+    level: 8
+    paths:
+        - src
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        # WordPress core functions / classes are not autoloaded during static analysis.
+        - '#^Function (add_action|add_filter|remove_filter|remove_menu_page|remove_submenu_page|remove_meta_box|wp_dequeue_script|wp_deregister_script|wp_safe_redirect|admin_url|home_url|get_post_type|get_post_types|is_comment_feed|is_admin|wp_doing_ajax|__) not found\.$#'
+        - '#^Class WP_(Admin_Bar|Error) not found\.$#'
+        - '#^Used constant [A-Z_]+ not found\.$#'
