@@ -9,6 +9,9 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Roots\Acorn\Application;
 
+/**
+ * @phpstan-consistent-constructor
+ */
 abstract class AbstractModule implements Module
 {
     protected Application $app;

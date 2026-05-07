@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace BrewAndBytes\AcornDisableComments;
 
 use BrewAndBytes\AcornDisableComments\Concerns\HasCollection;
-use BrewAndBytes\AcornDisableComments\Modules;
 use Illuminate\Support\Collection;
 use Roots\Acorn\Application;
 
+/**
+ * @phpstan-consistent-constructor
+ */
 class DisableComments
 {
     use HasCollection;
@@ -34,7 +36,7 @@ class DisableComments
     {
         $this->app = $app;
         $this->config = $this
-            ->collect($this->app->config->get('disable-comments', []))
+            ->collect($this->app->make('config')->get('disable-comments', []))
             ->map(fn ($value): Collection => $this->collect($value));
 
         add_action('init', fn () => $this->bootModules(), 99);
